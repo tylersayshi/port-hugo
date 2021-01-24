@@ -1,15 +1,15 @@
 {{ "<!-- JS Plugins -->" | safeHTML }}
-{{ range .Site.Params.plugins.js}}
-<script src="{{ .link | absURL }}"></script>
+{{ range .Site.Params.plugins.js }}
+  <script src="{{ .link | absURL }}"></script>
 {{ end }}
 
 {{ "<!-- Main Script -->" | safeHTML }}
-{{ $script := resources.Get "js/script.js" | minify}}
+{{ $script := resources.Get "js/script.js" | minify }}
 <script src="{{ $script.Permalink }}"></script>
 
 {{ "<!-- google analytics -->" | safeHTML }}
-{{ with .Site.Params.google_analytics_id}}
-<script>
+{{ with .Site.Params.google_analytics_id }}
+  <script>
   (function (i, s, o, g, r, a, m) {
     i['GoogleAnalyticsObject'] = r;
     i[r] = i[r] || function () {
