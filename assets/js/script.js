@@ -1,6 +1,13 @@
 (function ($) {
   'use strict';
 
+  $(document).ready(function () {
+    $("a[href^='mailto:']").click(function () {
+      alert(
+        'This link is trying to open your default email client. If it does not work, email me at: tylerjlawson2@gmail.com. I am looking forward to hearing from you!'
+      );
+    });
+  });
   /*--------------------------------
 	 Start Preloader Animation
 	----------------------------------*/

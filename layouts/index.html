@@ -188,8 +188,8 @@
 <!-- =============================
       Start Services
     =============================== -->
+{{ if $data.homepage.service.enable }}
 <section class="services" id="service">
-  {{ if $data.homepage.service.enable }}
   {{ with $data.homepage.service }}
   <div class="container">
     <div class="row">
@@ -235,8 +235,8 @@
     {{ end }}
   </div>
   {{ end }}
-  {{ end }}
 </section>
+{{ end }}
 <!-- =============================
        End Services
     =============================== -->
@@ -318,11 +318,57 @@
       End About Me
     =============================== -->
 
+    <!-- =============================
+       Start Testimonials
+    =============================== -->
+{{ if $data.homepage.testimonial.enable }}
+{{ with $data.homepage.testimonial }}
+<section class="testimonials" id="testimonial">
+  <div class="container">
+    <div class="row">
+      <div class="testimonials-container col-lg-8 offset-lg-2">
+        <h1 class="wow fadeInUp" data-wow-duration="1.5s">{{ .title }}</h1>
+        <div class="owl-carousel owl-theme wow fadeInUp" data-wow-duration="1.5s">
+          {{ range .testimonial_slider }}
+          <div class="single-testimonial">
+            <div class="testimonial-holder">
+              <img class="img-fluid" src="{{ .image | absURL }}" alt="{{ .name }}">
+              <h2>{{ .name }}</h2>
+              <span>{{ .designation | markdownify }}</span>
+              <p><i class="fa fa-quote-left"></i> {{ .content | markdownify }} <i class="fa fa-quote-right"></i></p>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+        {{ end }}
+        {{ end }}
+
+        {{ if $data.homepage.funfacts.enable }}
+        {{ with $data.homepage.funfacts }}
+        <div class="fun-facts wow fadeInUp container pt-5" data-wow-duration="1.5s">
+          {{ range .funfacts_list }}
+          <div class="fun-fact-holder">
+            <img class="img-fluid" src="{{ .image | absURL }}" alt="{{ .name }}">
+            <p class="fact-counter count" data-count="{{ .count }}">0</p>
+            <p>{{ .name }}</p>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}
+<!-- =============================
+       End Testimonials
+    =============================== -->
+
 <!-- =============================
       Start Certification
     =============================== -->
+{{ if $data.homepage.certification.enable }}
 <section class="certifications" id="certification">
-  {{ if $data.homepage.certification.enable }}
   {{ with $data.homepage.certification }}
   <div class="container">
     <div class="row">
@@ -348,9 +394,8 @@
     </div>
   </div>
   {{ end }}
-  {{ end }}
-
 </section>
+{{ end }}
 <!-- =============================
        End Certifications
     =============================== -->
@@ -405,51 +450,7 @@
        End Portfolio
     =============================== -->
 
-<!-- =============================
-       Start Testimonials
-    =============================== -->
-{{ if $data.homepage.testimonial.enable }}
-{{ with $data.homepage.testimonial }}
-<section class="testimonials" id="testimonial">
-  <div class="container">
-    <div class="row">
-      <div class="testimonials-container col-lg-8 offset-lg-2">
-        <h1 class="wow fadeInUp" data-wow-duration="1.5s">{{ .title }}</h1>
-        <div class="owl-carousel owl-theme wow fadeInUp" data-wow-duration="1.5s">
-          {{ range .testimonial_slider }}
-          <div class="single-testimonial">
-            <div class="testimonial-holder">
-              <img class="img-fluid" src="{{ .image | absURL }}" alt="{{ .name }}">
-              <h2>{{ .name }}</h2>
-              <span>{{ .designation | markdownify }}</span>
-              <p><i class="fa fa-quote-left"></i> {{ .content | markdownify }} <i class="fa fa-quote-right"></i></p>
-            </div>
-          </div>
-          {{ end }}
-        </div>
-        {{ end }}
-        {{ end }}
 
-        {{ if $data.homepage.funfacts.enable }}
-        {{ with $data.homepage.funfacts }}
-        <div class="fun-facts wow fadeInUp" data-wow-duration="1.5s">
-          {{ range .funfacts_list }}
-          <div class="fun-fact-holder">
-            <img class="img-fluid" src="{{ .image | absURL }}" alt="{{ .name }}">
-            <p class="fact-counter count" data-count="{{ .count }}">0</p>
-            <p>{{ .name }}</p>
-          </div>
-          {{ end }}
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-{{ end }}
-{{ end }}
-<!-- =============================
-       End Testimonials
-    =============================== -->
 
 <!-- =============================
        Start Contact
