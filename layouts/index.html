@@ -1,6 +1,4 @@
 {{ define "main" }}
-  {{ $data := index .Site.Data .Site.Language.Lang }}
-
   <!-- =============================
       Start Menu
     =============================== -->
@@ -82,7 +80,7 @@
         />
       </div>
     {{ end }}
-    {{ with $data.homepage.hero }}
+    {{ with .Site.Data.homepage.hero }}
       <div class="hero-image">
         <img src="{{ .background_image | absURL }}" alt="background" />
       </div>
@@ -125,9 +123,9 @@
   <!-- =============================
       Start Services
     =============================== -->
-  {{ if $data.homepage.service.enable }}
+  {{ if .Site.Data.homepage.service.enable }}
     <section class="services" id="service">
-      {{ with $data.homepage.service }}
+      {{ with .Site.Data.homepage.service }}
         <div class="container">
           <div class="row">
             <div class="col-lg-12 mx-auto col-sm-12">
@@ -162,8 +160,8 @@
         </div>
       {{ end }}
 
-      {{ if $data.homepage.call_to_action.enable }}
-        {{ with $data.homepage.call_to_action }}
+      {{ if .Site.Data.homepage.call_to_action.enable }}
+        {{ with .Site.Data.homepage.call_to_action }}
           <div
             class="need-service"
             style="background-image: url('{{ .bg_image | absURL }}');"
@@ -191,8 +189,8 @@
     =============================== -->
   <section class="about-me" id="about">
     <div class="container">
-      {{ if $data.homepage.about.enable }}
-        {{ with $data.homepage.about }}
+      {{ if .Site.Data.homepage.about.enable }}
+        {{ with .Site.Data.homepage.about }}
           <div class="row about-me-holder">
             <div
               class="col-lg-6 col-md-6 col-sm-6 about-me-text d-flex align-self-center"
@@ -219,8 +217,8 @@
       {{ end }}
 
       <div class="row experience-skill">
-        {{ if $data.homepage.experience.enable }}
-          {{ with $data.homepage.experience }}
+        {{ if .Site.Data.homepage.experience.enable }}
+          {{ with .Site.Data.homepage.experience }}
             <div class="col-lg-6 col-sm-6 col-11 experience">
               <h3>{{ .title }}</h3>
               <ul class="experience-chart">
@@ -243,15 +241,15 @@
           {{ end }}
         {{ end }}
 
-        {{ if $data.homepage.skill.enable }}
-          {{ with $data.homepage.skill }}
+        {{ if .Site.Data.homepage.skill.enable }}
+          {{ with .Site.Data.homepage.skill }}
             <div class="col-lg-6 col-sm-6 col-11 skill">
               <h3>{{ .title }}</h3>
               <div class="skill-progress-bar">
                 {{ range .skill_list }}
                   <div class="clearfix">
                     <span class="skillbar-title">{{ .name }}</span>
-                    {{ if $data.homepage.skill.showpercent }}
+                    {{ if .Site.Data.homepage.skill.showpercent }}
                       <span class="skill-bar-percent">{{ .percentage }}</span>
                     {{ end }}
                     <div class="skillbar" data-percent="{{ .percentage }}">
@@ -273,8 +271,8 @@
   <!-- =============================
        Start Portfolio
     =============================== -->
-  {{ if $data.homepage.portfolio.enable }}
-    {{ with $data.homepage.portfolio }}
+  {{ if .Site.Data.homepage.portfolio.enable }}
+    {{ with .Site.Data.homepage.portfolio }}
       <section class="portfolio" id="portfolio">
         <div class="container-fluid text-center">
           <div class="row portfolio-holder text-left">
