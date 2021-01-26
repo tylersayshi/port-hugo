@@ -129,39 +129,6 @@
   /*--------------------------------
 	 Start Header
 		----------------------------------*/
-  // Initiating Background Slider
-  var backgroundSlide = $('#background-slide');
-  backgroundSlide.owlCarousel({
-    loop: true,
-    items: 1,
-    dots: false,
-    autoplay: true,
-    autoplayTimeout: 5000,
-    animateOut: 'fadeOut'
-  });
-  $('.slider-prev-button').on('click', function () {
-    backgroundSlide.trigger('prev.owl.carousel');
-  });
-  $('.slider-next-button').on('click', function () {
-    backgroundSlide.trigger('next.owl.carousel');
-  });
-  // Setting Up Background Images
-  function SliderBackground() {
-    if ($('.owl-full-width .slider').length) {
-      $('.owl-full-width .slider').each(function () {
-        var $this = $(this);
-        var img = $this.children(img);
-        var imgSrc = img.attr('src');
-        $this.css({
-          backgroundImage: 'url(' + imgSrc + ')',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center center'
-        });
-      });
-    }
-  }
-  // Initializing Background Setting Function
-  SliderBackground();
   // Toggle Fullscreen Navigation
   $('#burger').on('click', function () {
     $('.fullscreen-nav-container').slideToggle(300);
@@ -192,17 +159,15 @@
 
   function toggleLogoImg(id) {
     var img = document.getElementById(id).src;
-    if (img.indexOf('dark.png') != -1) {
-      document.getElementById(id).src =
-        'https://www.qonsulter.de/images/logo-light.png';
+    if (img.indexOf('logo-dark.svg') != -1) {
+      document.getElementById(id).src = '/images/logo.svg';
     } else {
-      document.getElementById(id).src =
-        'https://www.qonsulter.de/images/logo-dark.png';
+      document.getElementById(id).src = '/images/logo-dark.svg';
     }
   }
 
   // Styling Menu on Scroll
-  $('.services').waypoint({
+  $('.about-me').waypoint({
     handler: function (direction) {
       // Fixing Menu after leaving Header Section
       //$(".menu").toggleClass("menu-fix");
@@ -263,42 +228,6 @@
   /*--------------------------------
 			 Start Portfolio
 	----------------------------------*/
-  // Initialize filterizr Plugin
-  if (document.getElementsByClassName('.filtr-container')) {
-    var filterizd = $('.filtr-container').filterizr();
-
-    // Styling of Filter Controls
-    $('.portfolio-navigation li').on('click', function () {
-      $('.portfolio-navigation li').removeClass('active');
-      $(this).addClass('active');
-    });
-
-    // Initialize MagnificPopup Plugin
-    $('.filtr-container').magnificPopup({
-      type: 'image',
-      delegate: 'a',
-      gallery: {
-        enabled: true
-      },
-      zoom: {
-        enabled: true,
-        duration: 300,
-        easing: 'ease-in-out'
-      }
-    });
-
-    // Galley Shuffle When Scrolled Down
-    $('.services').waypoint({
-      handler: function (direction) {
-        if (direction == 'down') {
-          filterizd.filterizr('shuffle');
-        }
-      },
-      offset: 'bottom-in-view'
-    });
-
-    // load more button
-  }
 
   /*--------------------------------
 			 End Portfolio
@@ -307,14 +236,6 @@
   /*--------------------------------
 			 Start Testimonials
 	----------------------------------*/
-  // Configure and Initialize Owl Carousel
-  $('.owl-carousel').owlCarousel({
-    items: 1,
-    loop: true,
-    dots: true,
-    autoplay: true,
-    autoplayTimeout: 5000
-  });
   /*--------------------------------
 			End Testimonials
 	----------------------------------*/

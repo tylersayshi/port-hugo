@@ -1039,16 +1039,6 @@ input:checked + label span:last-child {
   margin-right: auto;
   margin-bottom: 20px;
   width: 70%;
-  -webkit-filter: grayscale(100%);
-  -moz-filter: grayscale(100%);
-  -ms-filter: grayscale(100%);
-  -o-filter: grayscale(100%);
-  filter: grayscale(100%);
-  -webkit-transition: all linear 0.3s;
-  -moz-transition: all linear 0.3s;
-  -ms-transition: all linear 0.3s;
-  -o-transition: all linear 0.3s;
-  transition: all linear 0.3s;
 }
 
 .about-me-images img:hover {
@@ -1445,7 +1435,7 @@ ul.experience-chart h4 {
 .mfp-zoom-out-cur,
 .mfp-zoom-out-cur .mfp-image-holder,
 .mfp-close {
-  cursor: crosshair;
+  cursor: pointer !important;
 }
 
 .loadmore {
@@ -1583,9 +1573,6 @@ ul.experience-chart h4 {
   -ms-flex-pack: justify;
   justify-content: space-around;
   height: auto;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
@@ -1796,11 +1783,6 @@ textarea.form-control::-webkit-input-placeholder,
   left: 0;
   right: 0;
   text-align: center;
-  color: #fff;
-}
-
-.credit a {
-  color: #fff;
 }
 
 /*--------------------------------
@@ -2014,6 +1996,21 @@ textarea.form-control::-webkit-input-placeholder,
   .fullscreen-nav-container {
     min-height: 420px;
   }
+}
+
+.hero-image {
+  height: 100%;
+  overflow: hidden;
+}
+
+.hero-image img {
+  object-fit: cover;
+  min-height: 100%;
+  width: 100%;
+}
+
+.footer-icon:hover {
+  color: blue;
 }
 
 /*--------------------------------

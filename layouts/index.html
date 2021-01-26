@@ -17,29 +17,6 @@
         <li class="menu-item hvr-underline-from-left {{ .Weight }}"><a href="{{ .URL }}">{{ .Name }}</a></li>
         {{ end }}
       </ul>
-      <!-- Language List -->
-      {{- if .Site.IsMultiLingual }}
-      <select id="select-language" onchange="location = this.value;">
-        {{ $siteLanguages := .Site.Languages}}
-        {{ $pageLang := .Page.Lang}}
-        {{ range .Page.AllTranslations }}
-        {{ $translation := .}}
-        {{ range $siteLanguages }}
-        {{ if eq $translation.Lang .Lang }}
-        {{ $selected := false }}
-        {{ if eq $pageLang .Lang}}
-        <option id="{{ $translation.Language }}" value="{{ $translation.Permalink }}" selected>{{ .LanguageName }}
-        </option>
-        {{ else }}
-        <option id="{{ $translation.Language }}" value="{{ $translation.Permalink }}">{{ .LanguageName }}</option>
-        {{ end }}
-        {{ end }}
-        {{ end }}
-        {{ end }}
-      </select>
-      {{ end }}
-      <!-- /desktop-menu -->
-
       <!-- mobile-menu -->
       <div class="mobile-menu">
         <a class="menu-link">
@@ -104,17 +81,9 @@
     <img class="img-fluid" src="{{ .Site.Params.logo_light | relURL }}" alt="{{ .Site.Title }}">
   </div>
   {{ end }}
-  <div class="slider-prev-button slider-button">
-    <i class="fa fa-angle-left"></i>
-  </div>
-  <div class="slider-next-button slider-button">
-    <i class="fa fa-angle-right"></i>
-  </div>
   {{ with $data.homepage.hero }}
-  <div class="owl-carousel owl-full-width owl-theme" id="background-slide">
-    {{ range .slider_image }}
-    <div class="slider"><img class="img-fluid" src="{{ . | absURL }}" alt="slider-background"></div>
-    {{ end }}
+  <div class="hero-image">
+    <img  src="{{ .background_image | absURL }}" alt="background" />
   </div>
   <div class="container">
     <div class="row content">
@@ -410,37 +379,16 @@
     <div class="row portfolio-holder text-left">
       <div class="col-12 text-center">
         <h1 class="wow fadeInUp" data-wow-duration="1.5s">{{ .title }}</h1>
-        <div class="filtering wow fadeInUp" data-wow-duration="1.5s">
-          <ul class="portfolio-navigation">
-            <li data-filter="all" class="hvr-sweep-to-right active">All Items</li>
-            {{ $categories := slice }}
-            {{ range .portfolio_list }}
-            {{ $categories = $categories | append .category }}
-            {{ end }}
-            {{ range ( $categories | uniq ) }}
-            <li data-filter="{{ . | urlize }}" class="hvr-sweep-to-right">{{ . | humanize }}</li>
-            {{ end }}
-          </ul>
-        </div>
       </div>
-      <div class="col-lg-10 col-md-10 col-sm-10 col-10 mx-auto">
-        <div class="row filtr-container wow fadeInUp list" data-wow-duration="1.5s">
-          {{ range .portfolio_list }}
-          <div class="col-lg-4 col-md-6 col-sm-6 col-12 filtr-item" data-category="{{ .category | urlize }}">
-            <div class="item-holder">
-              <a href="{{ .image | absURL }}" title="{{ .name | safeHTML }}">
-                  <img src="{{ .image | absURL }}" alt="{{ .name | safeHTML }}">
-                <div class="item-caption">
-                  <h2>{{ .name | safeHTML }}</h2>
-                  <p>{{ .category | title }}</p>
-                  <div class="item-created">{{ .date }}</div>
-                </div>
-              </a>
-            </div>
-          </div>
-          {{ end }}
-        </div>
-      </div>
+      <ul id="og-grid" class="og-grid">
+        {{ range .portfolio_list }}
+        <li>
+          <a href="{{.url}}" data-largesrc="{{.image}}" data-title="{{.name}}" data-description="{{.description }}" data-buttontext="{{.buttontext}}">
+            <img src="{{.thumb}}" alt="{{.name}}"/>
+          </a>
+        </li>
+        {{ end }}
+      </ul>
     </div>
   </div>
 </section>
@@ -482,28 +430,22 @@
         </form>
       </div>
     </div>
-    <div class="row">
-      <div class="footer col-lg-10 offset-lg-1">
-        <hr>
-        <ul class="footer-icons list-inline">
-          {{ range .Site.Params.social }}
-          <li><a href="{{ .link | safeURL }}" target="_blank"><i class="fab {{ .icon }} fa-inverse fa-2x"></i></a></li>
-          {{ end }}
-        </ul>
-        <div class="to-top">
-          <a href="#home"><i class="fa fa-chevron-up"></i></a>
-        </div>
-        <div class="credit">
-          <i class="fas fa-copyright"></i> {{ .Site.Params.copyright | markdownify }}
-        </div>
+  </section>
+  {{ end }}
+  <div class="footer container text-center">
+      <ul class="footer-icons list-inline">
+        {{ range $.Site.Params.social }}
+        <li><a href="{{ .link | safeURL }}" target="_blank"><i class="{{ .icon }} footer-icon fa-2x"></i></a></li>
+        {{ end }}
+      </ul>
+      <div class="credit">
+        <i class="fas fa-copyright"></i> {{ .Site.Params.copyright | markdownify }}
       </div>
     </div>
-  </div>
-</section>
-{{ end }}
+</div>
 <!-- =============================
        End Contact
     =============================== -->
-<a href="#home" class="scroll-up hvr-icon-up"></a>
 
 {{ end }}
+
