@@ -264,7 +264,7 @@
 			 Start Portfolio
 	----------------------------------*/
   // Initialize filterizr Plugin
-  if (document.getElementById('.filtr-container')) {
+  if (document.getElementsByClassName('.filtr-container')) {
     var filterizd = $('.filtr-container').filterizr();
 
     // Styling of Filter Controls

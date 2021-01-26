@@ -299,9 +299,9 @@ body {
   transition: all 0.2s;
 }
 
-.head-holder .hireMe:hover {
+.button:hover {
   background: #6f6f6f;
-  color: #fff;
+  color: #fff !important;
   border: 2px solid #6f6f6f;
 }
 
@@ -1012,16 +1012,6 @@ input:checked + label span:last-child {
   letter-spacing: 2px;
 }
 
-.about-me-text h1:before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: -8px;
-  width: 47px;
-  height: 5px;
-  background: #6f6f6f;
-}
-
 .about-me-text p {
   color: #6f6f6f;
   font-size: 16px;
@@ -1068,14 +1058,6 @@ input:checked + label span:last-child {
   -ms-filter: grayscale(0%);
   -o-filter: grayscale(0%);
   filter: grayscale(0%);
-}
-
-.about-me .hvr-icon-hang:before {
-  content: '\f0ab';
-  position: absolute;
-  right: 8px;
-  top: 6px;
-  font-size: 16px;
 }
 
 /* ========= Start Experience ======= */
@@ -1599,7 +1581,7 @@ ul.experience-chart h4 {
   display: flex;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
-  justify-content: space-between;
+  justify-content: space-around;
   height: auto;
   -webkit-box-align: center;
   -ms-flex-align: center;
