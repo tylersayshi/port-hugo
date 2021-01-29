@@ -1,13 +1,5 @@
 (function ($) {
   'use strict';
-
-  $(document).ready(function () {
-    $("a[href^='mailto:']").click(function () {
-      alert(
-        'This link is trying to open your default email client. If it does not work, email me at: tylerjlawson2@gmail.com. I am looking forward to hearing from you!'
-      );
-    });
-  });
   /*--------------------------------
 	 Start Preloader Animation
 	----------------------------------*/
@@ -169,8 +161,6 @@
   // Styling Menu on Scroll
   $('.about-me').waypoint({
     handler: function (direction) {
-      // Fixing Menu after leaving Header Section
-      //$(".menu").toggleClass("menu-fix");
       // Changing Menu background after leaving Header Section
       $('.menu-container').toggleClass('menu-normal');
       $('.menu-item').toggleClass('menu-item-transparent');
@@ -184,7 +174,9 @@
       if (direction == 'up' && a == 'menu-link active') {
         $('.menu-link').trigger('click');
       }
-    }
+    },
+    // make header turn white just before it reaches about me section
+    offset: $('.menu-container').innerHeight() + 25
   });
 
   // Toggle Mobile Menu
@@ -319,29 +311,8 @@
     );
     $('.fullscreen-nav-holder').css('width', '100vw');
   }
-
-  // Wow Plugin Initialization
-  var wow = new WOW({
-    animateClass: 'animated',
-    offset: 70,
-    mobile: false
-  });
-  wow.init();
-
-  // Toggling Visibility of Scroll Up Button
-  $('.about-me-images').waypoint({
-    handler: function (direction) {
-      $('.scroll-up').toggleClass('scroll-up-show');
-    },
-    offset: 'bottom-in-view'
-  });
-  $('.sub-button').waypoint({
-    handler: function (direction) {
-      $('.scroll-up').toggleClass('scroll-up-show');
-    },
-    offset: 'bottom-in-view'
-  });
   /*--------------------------------
 			Others
-	----------------------------------*/
+  ----------------------------------*/
+  $('#current-year').html(new Date().getFullYear());
 })(jQuery);

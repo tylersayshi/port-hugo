@@ -43,16 +43,16 @@
             <nav>
               <ul class="mobile-menu-list">
                 {{ range .Site.Menus.main }}
-                  <li class="hvr-shutter-out-vertical mobile-menu-item 1">
+                  <li class="mobile-menu-item 1 mx-auto">
                     <a href="{{ .URL }}">{{ .Name }}</a>
                   </li>
                 {{ end }}
               </ul>
-              <ul class="mobile-menu-icons list-inline">
+              <ul class="mobile-menu-icons list-inline mx-auto">
                 {{ range .Site.Params.social }}
                   <li>
                     <a href="{{ .link | safeURL }}"
-                      ><i class="fab {{ .icon }}"></i
+                      ><i class="fab {{ .icon }} fa-2x"></i
                     ></a>
                   </li>
                 {{ end }}
@@ -82,7 +82,18 @@
     {{ end }}
     {{ with .Site.Data.homepage.hero }}
       <div class="hero-image">
-        <img src="{{ .background_image | absURL }}" alt="background" />
+        {{ if ne .mobile_bg_image "" }}
+          <img
+            class="d-none d-md-block"
+            src="{{ .bg_image | absURL }}"
+            alt="background" /><img
+            class="d-md-none"
+            src="{{ .mobile_bg_image | absURL }}"
+            alt="background" />{{ else }}
+          <img
+            src="{{ .bg_image | absURL }}"
+            alt="background"
+        />{{ end }}
       </div>
       <div class="container">
         <div class="row content">
@@ -99,6 +110,7 @@
                         <b class="is-visible">{{ . }}</b>{{ else }}<b
                           >{{ . }}</b
                         >{{ end }}
+
 
                       <!-- prettier-ignore-end -->
                     {{ end }}
@@ -121,70 +133,6 @@
     =============================== -->
 
   <!-- =============================
-      Start Services
-    =============================== -->
-  {{ if .Site.Data.homepage.service.enable }}
-    <section class="services" id="service">
-      {{ with .Site.Data.homepage.service }}
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12 mx-auto col-sm-12">
-              <div class="services-heading">
-                <div class="bar"></div>
-                <h1>{{ .title }}</h1>
-                <p>{{ .main_description | markdownify }}</p>
-              </div>
-              <div class="row">
-                {{ range .service_list }}
-                  <div class="col-lg-6 col-sm-6">
-                    <div class="service-label">
-                      <span
-                        class="fas fa-stack fa-2x"
-                        style="font-size: 2em; color: #6f6f6f;"
-                      >
-                        <i class="fas fa-square fa-stack-2x"></i>
-                        <i
-                          class="fas fa-xs fa-stack-1x fa-{{ .icon }} fa-inverse"
-                        ></i>
-                      </span>
-                      <h4 style="margin-top:10px">{{ .name | markdownify }}</h4>
-                    </div>
-                    <p class="service-description">
-                      {{ .description | markdownify }}
-                    </p>
-                  </div>
-                {{ end }}
-              </div>
-            </div>
-          </div>
-        </div>
-      {{ end }}
-
-      {{ if .Site.Data.homepage.call_to_action.enable }}
-        {{ with .Site.Data.homepage.call_to_action }}
-          <div
-            class="need-service"
-            style="background-image: url('{{ .bg_image | absURL }}');"
-          >
-            <h1>{{ .title | markdownify }}</h1>
-            {{ with .content }}
-              <p class="text-white">{{ . | markdownify }}</p>
-            {{ end }}
-            {{ if .button.enable }}
-              {{ with .button }}
-                <a href="{{ .link }}">{{ .label }}</a>
-              {{ end }}
-            {{ end }}
-          </div>
-        {{ end }}
-      {{ end }}
-    </section>
-  {{ end }}
-  <!-- =============================
-       End Services
-    =============================== -->
-
-  <!-- =============================
        Start About Me
     =============================== -->
   <section class="about-me" id="about">
@@ -200,7 +148,11 @@
                 <p>{{ .content | markdownify | emojify }}</p>
                 {{ if .button.enable }}
                   {{ with .button }}
-                    <a href="{{ .link | absURL }}" class="button download-cv">
+                    <a
+                      href="{{ .link | absURL }}"
+                      target="_blank"
+                      class="button download-cv"
+                    >
                       {{ .label }} <i class="fa fa-download"></i
                     ></a>
                   {{ end }}
@@ -209,7 +161,7 @@
             </div>
             {{ with .image }}
               <div class="col-lg-6 col-sm-6 col-9 about-me-images">
-                <img class="img-fluid" src="{{ . | absURL }}" alt="about-me" />
+                <img src="{{ . | absURL }}" alt="about-me" />
               </div>
             {{ end }}
           </div>
@@ -268,6 +220,24 @@
       End About Me
     =============================== -->
 
+  {{ if .Site.Data.homepage.funfacts.enable }}
+    {{ with .Site.Data.homepage.funfacts }}
+      <div class="fun-facts container pt-5">
+        {{ range .funfacts_list }}
+          <div class="fun-fact-holder">
+            <img
+              class="img-fluid"
+              src="{{ .image | absURL }}"
+              alt="{{ .name }}"
+            />
+            <p class="fact-counter count" data-count="{{ .count }}">0</p>
+            <p>{{ .name }}</p>
+          </div>
+        {{ end }}
+      </div>
+    {{ end }}
+  {{ end }}
+
   <!-- =============================
        Start Portfolio
     =============================== -->
@@ -283,15 +253,23 @@
             </div>
             <ul id="og-grid" class="og-grid">
               {{ range .portfolio_list }}
+                {{ $image := resources.Get .image }}
+                {{ $big_image := $image.Fill "780x500 jpg" }}
+                {{ $sm_image := $image.Fill "395x250 jpg" }}
                 <li>
+                  <p id="description-{{ .name | urlize }}" class="hidden">
+                    {{ .description | markdownify }}
+                  </p>
                   <a
                     href="{{ .url }}"
-                    data-largesrc="{{ .image }}"
+                    data-largesrc="{{ $big_image.Permalink }}"
                     data-title="{{ .name }}"
-                    data-description="{{ .description }}"
-                    data-buttontext="{{ .buttontext }}"
+                    data-buttontext="SEE SITE"
                   >
-                    <img src="{{ .thumb }}" alt="{{ .name }}" />
+                    <img
+                      src="{{ $sm_image.Permalink }}"
+                      alt="{{ .name }} image"
+                    />
                   </a>
                 </li>
               {{ end }}
@@ -305,19 +283,19 @@
        End Portfolio
     =============================== -->
 
-  <div class="footer container text-center">
+  <div class="footer container text-center" id="contact">
     <ul class="footer-icons list-inline">
       {{ range $.Site.Params.social }}
         <li>
           <a href="{{ .link | safeURL }}" target="_blank"
-            ><i class="{{ .icon }} footer-icon fa-2x"></i
+            ><i class="{{ .icon }} footer-icon fa-3x"></i
           ></a>
         </li>
       {{ end }}
     </ul>
     <div class="credit">
-      <i class="fas fa-copyright"></i>
-      {{ .Site.Params.copyright | markdownify }}
+      {{ $.Site.Params.copyright | markdownify }}
+      <span id="current-year"></span>
     </div>
   </div>
 {{ end }}

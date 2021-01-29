@@ -10,7 +10,6 @@
 	display: inline-block;
 	margin: 10px 5px 0 5px;
 	vertical-align: top;
-	height: 250px;
 }
 
 .og-grid li > a,
@@ -18,7 +17,8 @@
 	border: none;
 	outline: none;
 	display: block;
-	position: relative;
+  position: relative;
+  max-width: 100%;
 }
 
 .og-grid li.og-expanded > a::after {
@@ -49,7 +49,7 @@
 
 .og-expander-inner {
 	padding: 50px 30px;
-	height: 100%;
+	min-height: 100%;
 }
 
 .og-close {
@@ -67,7 +67,7 @@
 	position: absolute;
 	width: 100%;
 	top: 50%;
-	height: 1px;
+	height: 3px;
 	background: #888;
 	-webkit-transform: rotate(45deg);
 	-moz-transform: rotate(45deg);
@@ -109,41 +109,17 @@
 }
 
 .og-details h3 {
-	font-weight: 300;
+	font-weight: 400;
 	font-size: 52px;
 	padding: 40px 0 10px;
-	margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .og-details p {
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 22px;
-	color: #999;
-}
-
-.og-details a {
-	font-weight: 700;
-	font-size: 16px;
-	color: #333;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	padding: 10px 20px;
-	border: 3px solid #333;
-	display: inline-block;
-	margin: 30px 0 0;
-	outline: none;
-}
-
-.og-details a::before {
-	content: '\2192';
-	display: inline-block;
-	margin-right: 10px;
-}
-
-.og-details a:hover {
-	border-color: #999;
-	color: #999;
+	color: #4d4d4d;
 }
 
 .og-loading {
@@ -177,14 +153,6 @@
 	0% { background: #ddd; }
 	33% { background: #ccc; box-shadow: 0 0 1px #ccc, 15px 30px 1px #ccc, -15px 30px 1px #ddd; }
 	66% { background: #ccc; box-shadow: 0 0 1px #ccc, 15px 30px 1px #ddd, -15px 30px 1px #ccc; }
-}
-
-@media screen and (max-width: 830px) {
-
-	.og-expander h3 { font-size: 32px; }
-	.og-expander p { font-size: 13px; }
-	.og-expander a { font-size: 12px; }
-
 }
 
 @media screen and (max-width: 650px) {
