@@ -2,9 +2,9 @@
 
 This theme is a simple, customizable portfolio for designers or web developers.
 
-<!-- TODO add screenshot -->
+![Thumbnail](https://raw.githubusercontent.com/tylerjlawson/port-hugo/master/images/tn.png)
 
-![Screenshot](https://raw.githubusercontent.com/tylerjlawson/simple-resume/3495ff7d4351510595820d08a7f3b01733197e75/images/tn.png)
+![Screenshot](https://raw.githubusercontent.com/tylerjlawson/port-hugo/master/images/screenshot.png)
 
 ## Live Demo
 
