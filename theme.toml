@@ -1,12 +1,12 @@
-name = "Somrat"
+name = "port-hugo"
 license = "MIT"
-licenselink = "https://github.com/Somrat37/somrat/blob/master/LICENSE"
-description = "Portfolio Template"
-homepage = "https://somrat.netlify.com"
-tags = ['landing-page', 'fast', 'light', 'white', 'modern', 'dark', 'hugo-theme', 'hugo-templates', 'bootstrap', 'blog', 'responsive', 'clean', 'simple', 'creative', 'contact-form', 'custom-themes', 'mobile', 'minimalistic', 'pages', 'resume', 'portfolio', 'google analytics', 'customizable', 'flexbox', 'presentation', 'product', 'theme', 'typography']
-features = ['bootstrap','responsive']
+licenselink = "https://github.com/tylerjlawson/port-hugo/blob/master/LICENSE"
+description = "Web Developer Portfolio"
+homepage = "https://github.com/tylerjlawson/port-hugo"
+tags = ['personal', 'simple', 'bootstrap', 'font-awesome', 'portfolio']
+features = ['bootstrap','responsive','scss','autoprefixer']
 min_version = "0.60.0"
 
 [author]
-  name = "somrat"
-  homepage = "https://somrat.netlify.com/"
+  name = "tylerjlawson"
+  homepage = "https://tyler-lawson.com/"
