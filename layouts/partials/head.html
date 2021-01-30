@@ -51,7 +51,7 @@
       href="{{ .Site.Params.special_favicon.mask_icon }}"
       color="{{ .Site.Params.special_favicon.mask_icon_color }}"
     />
-    <meta name="theme-color" content="{{ .theme_color }}" />
+    <meta name="theme-color" content="{{ .Site.Params.special_favicon.theme_color }}" />
     {{ else }}
     <link rel="icon" type="image/png" href="{{ .Site.Params.favicon }}" />
   {{ end }}
