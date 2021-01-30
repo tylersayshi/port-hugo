@@ -80,7 +80,7 @@
         />
       </div>
     {{ end }}
-    {{ with .Site.Data.homepage.hero }}
+    {{ with .Site.Data.content.hero }}
       <div class="hero-image">
         {{ if ne .mobile_bg_image "" }}
           <img
@@ -134,8 +134,8 @@
     =============================== -->
   <section class="about-me" id="about">
     <div class="container">
-      {{ if .Site.Data.homepage.about.enable }}
-        {{ with .Site.Data.homepage.about }}
+      {{ if .Site.Data.content.about.enable }}
+        {{ with .Site.Data.content.about }}
           <div class="row about-me-holder">
             <div
               class="col-lg-6 col-md-6 col-sm-6 about-me-text d-flex align-self-center"
@@ -166,8 +166,8 @@
       {{ end }}
 
       <div class="row experience-skill">
-        {{ if .Site.Data.homepage.experience.enable }}
-          {{ with .Site.Data.homepage.experience }}
+        {{ if .Site.Data.content.experience.enable }}
+          {{ with .Site.Data.content.experience }}
             <div class="col-lg-6 col-sm-6 col-11 experience">
               <h3>{{ .title }}</h3>
               <ul class="experience-chart">
@@ -190,15 +190,15 @@
           {{ end }}
         {{ end }}
 
-        {{ if .Site.Data.homepage.skill.enable }}
-          {{ with .Site.Data.homepage.skill }}
+        {{ if .Site.Data.content.skill.enable }}
+          {{ with .Site.Data.content.skill }}
             <div class="col-lg-6 col-sm-6 col-11 skill">
               <h3>{{ .title }}</h3>
               <div class="skill-progress-bar">
                 {{ range .skill_list }}
                   <div class="clearfix">
                     <span class="skillbar-title">{{ .name }}</span>
-                    {{ if .Site.Data.homepage.skill.showpercent }}
+                    {{ if .Site.Data.content.skill.showpercent }}
                       <span class="skill-bar-percent">{{ .percentage }}</span>
                     {{ end }}
                     <div class="skillbar" data-percent="{{ .percentage }}">
@@ -217,8 +217,8 @@
       End About Me
     =============================== -->
 
-  {{ if .Site.Data.homepage.funfacts.enable }}
-    {{ with .Site.Data.homepage.funfacts }}
+  {{ if .Site.Data.content.funfacts.enable }}
+    {{ with .Site.Data.content.funfacts }}
       <div class="fun-facts container pt-5">
         {{ range .funfacts_list }}
           <div class="fun-fact-holder">
@@ -238,8 +238,8 @@
   <!-- =============================
        Start Portfolio
     =============================== -->
-  {{ if .Site.Data.homepage.portfolio.enable }}
-    {{ with .Site.Data.homepage.portfolio }}
+  {{ if .Site.Data.content.portfolio.enable }}
+    {{ with .Site.Data.content.portfolio }}
       <section class="portfolio" id="portfolio">
         <div class="container-fluid text-center">
           <div class="row portfolio-holder text-left">
