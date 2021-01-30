@@ -28,18 +28,30 @@
   {{ "<!--Favicon-->" | safeHTML }}
 
   {{ if isset .Site.Params "special_favicon" }}
-    {{ with .Site.Params.special_favicon }}
-      <link rel="apple-touch-icon" sizes="180x180" href="{{ .apple_touch }}" />
-      <link rel="icon" type="image/png" sizes="32x32" href="{{ .fav32 }}" />
-      <link rel="icon" type="image/png" sizes="16x16" href="{{ .fav16 }}" />
-      <link rel="manifest" href="{{ .manifest }}" />
-      <link
-        rel="mask-icon"
-        href="{{ .mask_icon }}"
-        color="{{ .mask_icon_color }}"
-      />
-      <meta name="theme-color" content="{{ .theme_color }}" />
-    {{ end }}
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{{ .Site.Params.special_favicon.apple_touch }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{{ .Site.Params.special_favicon.fav32 }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{{ .Site.Params.special_favicon.fav16 }}"
+    />
+    <link rel="manifest" href="{{ .Site.Params.special_favicon.manifest }}" />
+    <link
+      rel="mask-icon"
+      href="{{ .Site.Params.special_favicon.mask_icon }}"
+      color="{{ .Site.Params.special_favicon.mask_icon_color }}"
+    />
+    <meta name="theme-color" content="{{ .theme_color }}" />
     {{ else }}
     <link rel="icon" type="image/png" href="{{ .Site.Params.favicon }}" />
   {{ end }}
