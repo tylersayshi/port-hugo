@@ -1,5 +1,5 @@
 ######################## default configuration ####################
-baseURL = "https://example.com"
+baseURL = ""
 title = "Port Hugo"
 theme = "port-hugo"
 
