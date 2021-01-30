@@ -1,0 +1,19 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "repository": "git@github.com:tylerjlawson/port-hugo.git",
+  "author": "Tyler Lawson",
+  "license": "MIT",
+  "scripts": {
+    "start": "hugo server",
+    "build": "hugo",
+    "prettier": "prettier --write ."
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.3",
+    "postcss": "^8.2.4",
+    "postcss-cli": "^8.3.1",
+    "prettier": "^2.2.1",
+    "prettier-plugin-go-template": "^0.0.10"
+  }
+}

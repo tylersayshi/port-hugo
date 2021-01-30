@@ -1,47 +1,33 @@
 ######################## default configuration ####################
-baseURL = "https://examplesite.com"
-title = "Somrat | Hugo Portfolio Template"
-theme = "somrat"
-# disable language
-disableLanguages = [] # disable language from here
+baseURL = "https://example.com"
+title = "Port Hugo"
+theme = "port-hugo"
 
 ############################# Plugins ##############################
 
 # CSS Plugins
 [[params.plugins.css]]
-link = "plugins/bootstrap/bootstrap.min.css"
+link = "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
 [[params.plugins.css]]
-link = "plugins/fontawesome/font-awesome.min.css"
+link = "https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
 [[params.plugins.css]]
-link = "plugins/hover/hover.css"
+link = "https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.0/css/hover-min.css"
 [[params.plugins.css]]
-link = "plugins/magnific-popup/magnific-popup.css"
-[[params.plugins.css]]
-link = "plugins/owl-carousel/owl.carousel.min.css"
-[[params.plugins.css]]
-link = "plugins/owl-carousel/owl.theme.default.min.css"
+link = "https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900&display=swap"
 [[params.plugins.css]]
 link = "plugins/text-animation/text-animation.css"
 [[params.plugins.css]]
-link = "https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900&display=swap"
+link = "plugins/hugrid/hugrid.css"
 
 # JS Plugins
 [[params.plugins.js]]
-link = "plugins/jQuery/jquery.min.js"
+link = "https://code.jquery.com/jquery-3.5.1.min.js"
 [[params.plugins.js]]
-link = "plugins/bootstrap/bootstrap.min.js"
-[[params.plugins.js]]
-link = "plugins/wow.min.js"
+link = "https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"
 [[params.plugins.js]]
 link = "plugins/text-animation/text-animation.js"
 [[params.plugins.js]]
-link = "plugins/jquery.waypoints.min.js"
-[[params.plugins.js]]
-link = "plugins/filterizr/jquery.filterizr.min.js"
-[[params.plugins.js]]
-link = "plugins/magnific-popup/jquery.magnific-popup.min.js"
-[[params.plugins.js]]
-link = "plugins/owl-carousel/owl.carousel.min.js"
+link = "plugins/hugrid/hugrid.min.js"
 
 
 ############################## navigation ###############################
@@ -58,82 +44,44 @@ URL = "#about"
 weight = 2
 
 [[menu.main]]
-name = "Service"
-URL = "#service"
-weight = 3
-
-[[menu.main]]
 name = "Portfolio"
 URL = "#portfolio"
-weight = 4
-
-[[menu.main]]
-name = "Testimonial"
-URL = "#testimonial"
-weight = 5
-
-[[menu.main]]
-name = "Contact"
-URL = "#contact"
-weight = 6
+weight = 3
 
 
 #################### default parameters ################################
 [params]
-logo_light = "images/logo.png"
-logo_dark = "images/logo-dark.png"
+logo_light = "images/logo.svg"
+logo_dark = "images/logo-dark.svg"
+copyright = "Copyright Burton Guster &copy;"
 # Meta data
-description = "This is meta description"
-author = "somrat"
-# contact form action
-contact_form_action = "" # contact form works with https://formspree.io
-# Google analytics
-google_analytics_id = "" # your id
+description = "Personal Portfolio"
+author = "Burton Guster"
+favicon = "images/favicon.png"
 
 # Preloader
 [params.preloader]
 enable = true
 preloader = "images/preloader.gif" # use jpg, png, svg or gif format.
-  
+
 ############################# social site ########################
-[[params.social]]
-icon = "fa-facebook-f" # fontawesome icon 4.7.0 : https://fontawesome.com/v4.7.0/icons/
-link = "https://www.facebook.com/somrat.mac"
 
 [[params.social]]
-icon = "fa-twitter" # fontawesome icon 4.7.0 : https://fontawesome.com/v4.7.0/icons/
-link = "https://twitter.com/somrat_37"
+icon = "fab fa-github"
+link = "https://github.com/tylerjlawson"
 
 [[params.social]]
-icon = "fa-instagram" # fontawesome icon 4.7.0 : https://fontawesome.com/v4.7.0/icons/
-link = "https://www.instagram.com/somrat_sorkar/"
+icon = "fab fa-linkedin"
+link = "https://www.linkedin.com/"
 
 [[params.social]]
-icon = "fa-github" # fontawesome icon 4.7.0 : https://fontawesome.com/v4.7.0/icons/
-link = "https://github.com/Somrat37"
+icon = "fas fa-envelope"
+link = "mailto:guster@burton.com"
 
 [[params.social]]
-icon = "fa-linkedin" # fontawesome icon 4.7.0 : https://fontawesome.com/v4.7.0/icons/
-link = "https://www.linkedin.com/in/somrat-sorkar-872581158/"
+icon = "fab fa-medium"
+link = "https://medium.com/@gusburton"
 
-
-################################### English language #####################################
-[Languages.en]
-languageName = "En"
-languageCode = "en-us"
 contentDir = "content/english"
 weight = 1
 home = "Home"
-# copyright
-copyright = "Copyright &copy; 2020 a hugo theme by [somrat](https://somrat.netlify.com)"
-
-
-################################### French language #####################################
-[Languages.fr]
-languageName = "Fr"
-languageCode = "fr-fr"
-contentDir = "content/french"
-weight = 2
-home = "Accueil"
-# copyright
-copyright = "Copyright &copy; 2020 a hugo theme by [somrat](https://somrat.netlify.com)"
