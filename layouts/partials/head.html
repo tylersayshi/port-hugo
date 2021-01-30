@@ -35,7 +35,7 @@
   <link rel="manifest" href="{{.manifest}}" />
   <link rel="mask-icon" href="{{.mask_icon}}" color="{{.mask_icon_color}}" />
   <meta name="theme-color" content="{{.theme_color}}" />
-  {{ else }}
+  {{ end}} {{ else }}
   <link rel="icon" type="image/png" href="{{ .Site.Params.favicon }}" />
   {{ end }}
 </head>
