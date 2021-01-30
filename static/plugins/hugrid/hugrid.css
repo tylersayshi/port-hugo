@@ -157,6 +157,7 @@
 @media screen and (max-width: 650px) {
 
 	.og-fullimg { display: none; }
-	.og-details { float: none; width: 100%; }
+  .og-details { float: none; width: 100%; padding: 0; }
+  .og-details h3 { font-size: 32px; }
 
 }

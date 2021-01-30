@@ -90,9 +90,7 @@
             class="d-md-none"
             src="{{ .mobile_bg_image | absURL }}"
             alt="background" />{{ else }}
-          <img
-            src="{{ .bg_image | absURL }}"
-            alt="background"
+          <img src="{{ .bg_image | absURL }}" alt="background"
         />{{ end }}
       </div>
       <div class="container">
@@ -110,6 +108,7 @@
                         <b class="is-visible">{{ . }}</b>{{ else }}<b
                           >{{ . }}</b
                         >{{ end }}
+
                     {{ end }}
                   </span>
                 </strong>
