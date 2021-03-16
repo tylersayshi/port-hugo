@@ -252,8 +252,12 @@
                 {{ $image := resources.Get .image }}
                 {{ $big_image := $image.Fill "780x500 jpg" }}
                 {{ $sm_image := $image.Fill "395x250 jpg" }}
+                {{ $parsed_name := replace .name "." "" }}
                 <li>
-                  <p id="description-{{ .name | urlize }}" class="hidden">
+                  <p
+                    id="description-{{ $parsed_name | urlize }}"
+                    class="hidden"
+                  >
                     {{ .description | markdownify }}
                   </p>
                   <a
@@ -264,7 +268,7 @@
                   >
                     <img
                       src="{{ $sm_image.Permalink }}"
-                      alt="{{ .name }} image"
+                      alt="{{ $parsed_name }} image"
                     />
                   </a>
                 </li>
