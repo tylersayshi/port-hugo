@@ -1,0 +1,19 @@
+{{ define "main" }}
+  <span class="menu-dark"></span>
+  {{- partial "menu.html" . -}}
+  <div class="col-12 text-center blog">
+    <h1>{{ .Params.title }}</h1>
+    <div class="posts">
+      {{ range .Pages }}
+        <div class="col-8 mx-auto text-left">
+          <a href="{{ .Permalink }}"
+            ><h2>{{ .Params.title }}</h2>
+            <span>{{ .Params.date.Format "1/2/2006" }}</span>
+            <p>{{ .Params.description }}</p></a
+          >
+        </div>
+      {{ end }}
+    </div>
+  </div>
+  {{- partial "footer.html" . -}}
+{{ end }}

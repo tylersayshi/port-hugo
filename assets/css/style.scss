@@ -84,7 +84,7 @@ html {
   height: 100%;
 }
 h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 * {
   outline: none;
@@ -925,8 +925,11 @@ ul.experience-chart {
   border-radius: 22px;
 }
 .portfolio {
-  background: #fff;
   padding: 70px 0px;
+}
+.portfolio,
+.blog {
+  background: #fff;
   h1 {
     color: #6f6f6f;
     text-align: center;
@@ -934,6 +937,9 @@ ul.experience-chart {
     letter-spacing: 4px;
     position: relative;
   }
+}
+.blog {
+  margin-top: 80px;
 }
 .hidden {
   display: none !important;

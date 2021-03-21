@@ -135,19 +135,28 @@
   /*--------------------------------
 	Start Menu
 	----------------------------------*/
-  // Highlighting Menu on Scroll Through Sections
-  $(window).on('scroll', function () {
-    var counter = 0;
-    $('section').each(function () {
-      if ($(window).scrollTop() + 80 >= $(this).offset().top) {
-        $('.menu-item').removeClass('active');
-        $('.menu-item.' + counter).addClass('active');
-        $('.mobile-menu-item').removeClass('active');
-        $('.mobile-menu-item.' + counter).addClass('active');
-      }
-      ++counter;
+
+  if (window.location.pathname === '/blog/') {
+    const blogMenuItem = jQuery.grep(
+      $('.menu-item'),
+      (ele, i) => ele.textContent.trim().toLowerCase() === 'blog'
+    );
+    if (blogMenuItem.length) blogMenuItem[0].classList.add('active');
+  } else {
+    // Highlighting Menu on Scroll Through Sections
+    $(window).on('scroll', function () {
+      var counter = 0;
+      $('section').each(function () {
+        if ($(window).scrollTop() + 80 >= $(this).offset().top) {
+          $('.menu-item').removeClass('active');
+          $('.menu-item.' + counter).addClass('active');
+          $('.mobile-menu-item').removeClass('active');
+          $('.mobile-menu-item.' + counter).addClass('active');
+        }
+        ++counter;
+      });
     });
-  });
+  }
 
   function toggleLogoImg(id) {
     var img = document.getElementById(id).src;
@@ -159,7 +168,7 @@
   }
 
   // Styling Menu on Scroll
-  $('.about-me').waypoint({
+  $('.menu-dark').waypoint({
     handler: function (direction) {
       // Changing Menu background after leaving Header Section
       $('.menu-container').toggleClass('menu-normal');

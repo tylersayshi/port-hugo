@@ -1,0 +1,61 @@
+<section class="menu menu-fix" id="menu">
+  <nav>
+    <!-- desktop-menu -->
+    <div class="menu-container">
+      <div class="desktop-menu-logo">
+        <a href="{{ .Site.BaseURL | relLangURL }}"
+          ><img
+            class="img-fluid"
+            src="{{ .Site.Params.logo_light | absURL }}"
+            alt="{{ .Site.Title }}"
+            id="desktop-logo"
+        /></a>
+      </div>
+      <ul class="desktop-menu list-inline mb-0" id="desktop-menu">
+        {{ range .Site.Menus.main }}
+          <li class="menu-item hvr-underline-from-left {{ .Weight }}">
+            <a href="{{ .URL }}">{{ .Name }}</a>
+          </li>
+        {{ end }}
+      </ul>
+      <!-- mobile-menu -->
+      <div class="mobile-menu">
+        <a class="menu-link">
+          <div class="mobile-menu-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </a>
+        <div class="mobile-menu-logo">
+          <a href="{{ .Site.BaseURL | relLangURL }}"
+            ><img
+              class="img-fluid"
+              src="{{ .Site.Params.logo_dark | absURL }}"
+              alt="{{ .Site.Title }}"
+          /></a>
+        </div>
+        <div class="menu-slider">
+          <nav>
+            <ul class="mobile-menu-list">
+              {{ range .Site.Menus.main }}
+                <li class="mobile-menu-item 1 mx-auto">
+                  <a href="{{ .URL }}">{{ .Name }}</a>
+                </li>
+              {{ end }}
+            </ul>
+            <ul class="mobile-menu-icons list-inline mx-auto">
+              {{ range .Site.Params.social }}
+                <li>
+                  <a href="{{ .link | safeURL }}"
+                    ><i class="fab {{ .icon }} fa-2x"></i
+                  ></a>
+                </li>
+              {{ end }}
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </nav>
+</section>
