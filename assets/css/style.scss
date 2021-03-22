@@ -84,7 +84,7 @@ html {
   height: 100%;
 }
 h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 * {
   outline: none;
@@ -925,8 +925,11 @@ ul.experience-chart {
   border-radius: 22px;
 }
 .portfolio {
-  background: #fff;
   padding: 70px 0px;
+}
+.portfolio,
+.blog {
+  background: #fff;
   h1 {
     color: #6f6f6f;
     text-align: center;
@@ -934,6 +937,25 @@ ul.experience-chart {
     letter-spacing: 4px;
     position: relative;
   }
+}
+.under-menu {
+  margin-top: 80px;
+}
+.posts {
+  min-height: calc(100vh - 340px);
+  .post a {
+    color: #212121;
+    text-decoration: none;
+    &:hover {
+      color: rgba(50, 50, 50, 0.6);
+    }
+  }
+}
+.date {
+  color: rgba(50, 50, 50, 0.6);
+  font-style: italic;
+  margin-bottom: 2rem;
+  display: block;
 }
 .hidden {
   display: none !important;

@@ -1,137 +1,12 @@
 {{ define "main" }}
-  <!-- =============================
-      Start Menu
-    =============================== -->
-  <section class="menu menu-fix" id="menu">
-    <nav>
-      <!-- desktop-menu -->
-      <div class="menu-container">
-        <div class="desktop-menu-logo">
-          <a href="{{ .Site.BaseURL | relLangURL }}"
-            ><img
-              class="img-fluid"
-              src="{{ .Site.Params.logo_light | absURL }}"
-              alt="{{ .Site.Title }}"
-              id="desktop-logo"
-          /></a>
-        </div>
-        <ul class="desktop-menu list-inline mb-0" id="desktop-menu">
-          {{ range .Site.Menus.main }}
-            <li class="menu-item hvr-underline-from-left {{ .Weight }}">
-              <a href="{{ .URL }}">{{ .Name }}</a>
-            </li>
-          {{ end }}
-        </ul>
-        <!-- mobile-menu -->
-        <div class="mobile-menu">
-          <a class="menu-link">
-            <div class="mobile-menu-nav">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </a>
-          <div class="mobile-menu-logo">
-            <a href="{{ .Site.BaseURL | relLangURL }}"
-              ><img
-                class="img-fluid"
-                src="{{ .Site.Params.logo_dark | absURL }}"
-                alt="{{ .Site.Title }}"
-            /></a>
-          </div>
-          <div class="menu-slider">
-            <nav>
-              <ul class="mobile-menu-list">
-                {{ range .Site.Menus.main }}
-                  <li class="mobile-menu-item 1 mx-auto">
-                    <a href="{{ .URL }}">{{ .Name }}</a>
-                  </li>
-                {{ end }}
-              </ul>
-              <ul class="mobile-menu-icons list-inline mx-auto">
-                {{ range .Site.Params.social }}
-                  <li>
-                    <a href="{{ .link | safeURL }}"
-                      ><i class="fab {{ .icon }} fa-2x"></i
-                    ></a>
-                  </li>
-                {{ end }}
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </nav>
-  </section>
-  <!-- =============================
-      End Menu
-    =============================== -->
+  {{- partial "menu.html" . -}}
 
-  <!-- =============================
-      Start Header
-    =============================== -->
-  <section class="header" id="home">
-    {{ if .Site.Params.enable_logo }}
-      <div class="logo">
-        <img
-          class="img-fluid"
-          src="{{ .Site.Params.logo_light | relURL }}"
-          alt="{{ .Site.Title }}"
-        />
-      </div>
-    {{ end }}
-    {{ with .Site.Data.content.hero }}
-      <div class="hero-image">
-        {{ if ne .mobile_bg_image "" }}
-          <img
-            class="d-none d-md-block"
-            src="{{ .bg_image | absURL }}"
-            alt="background" /><img
-            class="d-md-none"
-            src="{{ .mobile_bg_image | absURL }}"
-            alt="background" />{{ else }}
-          <img src="{{ .bg_image | absURL }}" alt="background"
-        />{{ end }}
-      </div>
-      <div class="container">
-        <div class="row content">
-          <div
-            class="col-lg-8 col-lg-offset-2 col-sm-8 col-sm-offset-2 head-container"
-          >
-            <div class="head-holder">
-              <h1 class="introduction">{{ .title | markdownify | emojify }}</h1>
-              <div class="animated-text">
-                <strong class="cd-headline clip">
-                  <span class="cd-words-wrapper">
-                    {{ range $index, $elements:= .occupations }}
-                      {{ if eq $index 0 }}
-                        <b class="is-visible">{{ . }}</b>{{ else }}<b
-                          >{{ . }}</b
-                        >{{ end }}
-
-                    {{ end }}
-                  </span>
-                </strong>
-              </div>
-              {{ if .button.enable }}
-                {{ with .button }}
-                  <a class="hireMe button" href="{{ .link }}">{{ .label }}</a>
-                {{ end }}
-              {{ end }}
-            </div>
-          </div>
-        </div>
-      </div>
-    {{ end }}
-  </section>
-  <!-- =============================
-       End Header
-    =============================== -->
+  {{- partial "header.html" . -}}
 
   <!-- =============================
        Start About Me
     =============================== -->
-  <section class="about-me" id="about">
+  <section class="about-me menu-dark" id="about">
     <div class="container">
       {{ if .Site.Data.content.about.enable }}
         {{ with .Site.Data.content.about }}
@@ -283,19 +158,5 @@
        End Portfolio
     =============================== -->
 
-  <div class="footer container text-center" id="contact">
-    <ul class="footer-icons list-inline">
-      {{ range $.Site.Params.social }}
-        <li>
-          <a href="{{ .link | safeURL }}" target="_blank"
-            ><i class="{{ .icon }} footer-icon fa-3x"></i
-          ></a>
-        </li>
-      {{ end }}
-    </ul>
-    <div class="credit">
-      {{ $.Site.Params.copyright | markdownify }}
-      <span id="current-year"></span>
-    </div>
-  </div>
+  {{- partial "footer.html" . -}}
 {{ end }}

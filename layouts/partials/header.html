@@ -1,92 +1,54 @@
-{{ "<!-- navigation -->" | safeHTML }}
-<header class="fixed-top navigation">
-  <div class="container">
-    <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
-      <a class="navbar-brand" href="{{ .Site.BaseURL | relLangURL }}"
-        ><img
-          class="img-fluid"
-          src="{{ .Site.Params.logo | absURL }}"
-          alt="{{ .Site.Title }}"
-      /></a>
-      <button
-        class="navbar-toggler border-0"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navigation"
-      >
-        <i class="ti-align-right h3 text-white"></i>
-      </button>
+<section class="header" id="header">
+  {{ if .Site.Params.enable_logo }}
+    <div class="logo">
+      <img
+        class="img-fluid"
+        src="{{ .Site.Params.logo_light | relURL }}"
+        alt="{{ .Site.Title }}"
+      />
+    </div>
+  {{ end }}
+  {{ with .Site.Data.content.hero }}
+    <div class="hero-image">
+      {{ if ne .mobile_bg_image "" }}
+        <img
+          class="d-none d-md-block"
+          src="{{ .bg_image | absURL }}"
+          alt="background" /><img
+          class="d-md-none"
+          src="{{ .mobile_bg_image | absURL }}"
+          alt="background" />{{ else }}
+        <img src="{{ .bg_image | absURL }}" alt="background"
+      />{{ end }}
+    </div>
+    <div class="container">
+      <div class="row content">
+        <div
+          class="col-lg-8 col-lg-offset-2 col-sm-8 col-sm-offset-2 head-container"
+        >
+          <div class="head-holder">
+            <h1 class="introduction">{{ .title | markdownify | emojify }}</h1>
+            <div class="animated-text">
+              <strong class="cd-headline clip">
+                <span class="cd-words-wrapper">
+                  {{ range $index, $elements:= .occupations }}
+                    {{ if eq $index 0 }}
+                      <b class="is-visible">{{ . }}</b>{{ else }}<b
+                        >{{ . }}</b
+                      >{{ end }}
 
-      <div class="collapse navbar-collapse text-center" id="navigation">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="{{ .Site.BaseURL | relLangURL }}"
-              >{{ .Site.Params.Home }}</a
-            >
-          </li>
-          {{ range .Site.Menus.main }}
-            {{ if .HasChildren }}
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  {{ .Name }}
-                </a>
-                <div class="dropdown-menu">
-                  {{ range .Children }}
-                    <a class="dropdown-item" href="{{ .URL | absURL }}"
-                      >{{ .Name }}</a
-                    >
                   {{ end }}
-                </div>
-              </li>
-              {{ else }}
-              <li class="nav-item">
-                <a class="nav-link" href="{{ .URL | absURL }}">{{ .Name }}</a>
-              </li>
-            {{ end }}
-          {{ end }}
-        </ul>
-
-        {{ if .Site.Params.search }}
-          {{ "<!-- search -->" | safeHTML }}
-          <div class="search px-4">
-            <button id="searchOpen" class="search-btn">
-              <i class="ti-search"></i>
-            </button>
-            <div class="search-wrapper">
-              <form action="{{ `search`| relLangURL }}" class="h-100">
-                <input
-                  class="search-box px-4"
-                  id="search-query"
-                  name="s"
-                  type="search"
-                  placeholder="Type & Hit Enter..."
-                />
-              </form>
-              <button id="searchClose" class="search-close">
-                <i class="ti-close text-dark"></i>
-              </button>
+                </span>
+              </strong>
             </div>
+            {{ if .button.enable }}
+              {{ with .button }}
+                <a class="hireMe button" href="{{ .link }}">{{ .label }}</a>
+              {{ end }}
+            {{ end }}
           </div>
-        {{ end }}
-
-        {{ if .Site.Params.navigation_button.enable }}
-          {{ "<!-- get start btn -->" | safeHTML }}
-          <a
-            href="{{ .Site.Params.navigation_button.link | absURL }}"
-            class="btn btn-primary ml-lg-4"
-            >{{ .Site.Params.navigation_button.label }}</a
-          >
-        {{ end }}
+        </div>
       </div>
-    </nav>
-  </div>
-</header>
-{{ "<!-- /navigation -->" | safeHTML }}
+    </div>
+  {{ end }}
+</section>
