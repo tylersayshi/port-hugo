@@ -136,7 +136,7 @@
 	Start Menu
 	----------------------------------*/
 
-  if (window.location.pathname === '/blog/') {
+  if (window.location.pathname.includes('/blog/')) {
     const blogMenuItem = jQuery.grep(
       $('.menu-item'),
       (ele, i) => ele.textContent.trim().toLowerCase() === 'blog'
