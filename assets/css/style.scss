@@ -938,8 +938,24 @@ ul.experience-chart {
     position: relative;
   }
 }
-.blog {
+.under-menu {
   margin-top: 80px;
+}
+.posts {
+  min-height: calc(100vh - 340px);
+  .post a {
+    color: #212121;
+    text-decoration: none;
+    &:hover {
+      color: rgba(50, 50, 50, 0.6);
+    }
+  }
+}
+.date {
+  color: rgba(50, 50, 50, 0.6);
+  font-style: italic;
+  margin-bottom: 2rem;
+  display: block;
 }
 .hidden {
   display: none !important;

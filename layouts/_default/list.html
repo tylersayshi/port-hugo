@@ -1,15 +1,15 @@
 {{ define "main" }}
   <span class="menu-dark"></span>
   {{- partial "menu.html" . -}}
-  <div class="col-12 text-center blog">
-    <h1>{{ .Params.title }}</h1>
-    <div class="posts">
+  <div class="col-12 text-center blog under-menu">
+    <h1>{{ .Title }}</h1>
+    <div class="posts mt-4">
       {{ range .Pages }}
-        <div class="col-8 mx-auto text-left">
+        <div class="post col-8 mx-auto text-left">
           <a href="{{ .Permalink }}"
-            ><h2>{{ .Params.title }}</h2>
-            <span>{{ .Params.date.Format "1/2/2006" }}</span>
-            <p>{{ .Params.description }}</p></a
+            ><h2>{{ .Title }}</h2>
+            <span>{{ .Date.Format "1/2/2006" }}</span>
+            <p>{{ .Description }}</p></a
           >
         </div>
       {{ end }}
