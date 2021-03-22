@@ -951,7 +951,14 @@ ul.experience-chart {
     }
   }
 }
-
+.post-container {
+  img {
+    margin: auto;
+    margin-bottom: 20px;
+    display: block;
+    max-width: 100%;
+  }
+}
 .date {
   color: rgba(50, 50, 50, 0.6);
   font-style: italic;

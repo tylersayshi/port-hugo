@@ -4,8 +4,11 @@
   <div class="under-menu col-lg-8 col-md-10 col-12 mx-auto post-container">
     <h1>{{ .Title }}</h1>
     <span class="date">Posted on: {{ .Date.Format "1/2/2006" }}</span>
+    {{ with .Params.image }}
+      <img src="{{ . }}" alt="{{ $.Title }}" />
+    {{ end }}
     <div class="body">
-        {{.Content}}
+      {{ .Content }}
     </div>
   </div>
 
