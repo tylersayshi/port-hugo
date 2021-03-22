@@ -951,9 +951,7 @@ ul.experience-chart {
     }
   }
 }
-.post-container {
-  margin-top: 100px;
-}
+
 .date {
   color: rgba(50, 50, 50, 0.6);
   font-style: italic;
@@ -1328,6 +1326,9 @@ ul.experience-chart {
 @media (min-width: 766px) {
   .mobile-menu-fix {
     display: none;
+  }
+  .post-container {
+    margin-top: 100px;
   }
 }
 @media (max-width: 600px) {

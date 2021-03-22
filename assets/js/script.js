@@ -168,25 +168,36 @@
   }
 
   // Styling Menu on Scroll
-  $('.menu-dark').waypoint({
-    handler: function (direction) {
-      // Changing Menu background after leaving Header Section
-      $('.menu-container').toggleClass('menu-normal');
-      $('.menu-item').toggleClass('menu-item-transparent');
-      $('.desktop-menu .hvr-underline-from-left').toggleClass('dark');
-      // Toggle Logo
-      toggleLogoImg('desktop-logo');
-      // Toggling Mobile Menu Visibility
-      $('.mobile-menu').toggleClass('mobile-menu-fix');
-      // Auto-Collapsing Mobile Menu When Left Open
-      var a = $('.menu-link').attr('class');
-      if (direction == 'up' && a == 'menu-link active') {
-        $('.menu-link').trigger('click');
-      }
-    },
-    // make header turn white just before it reaches about me section
-    offset: $('.menu-container').innerHeight() + 25
-  });
+  if (window.location.pathname === '/') {
+    $('.about-me').waypoint({
+      handler: function (direction) {
+        // Changing Menu background after leaving Header Section
+        $('.menu-container').toggleClass('menu-normal');
+        $('.menu-item').toggleClass('menu-item-transparent');
+        $('.desktop-menu .hvr-underline-from-left').toggleClass('dark');
+        // Toggle Logo
+        toggleLogoImg('desktop-logo');
+        // Toggling Mobile Menu Visibility
+        $('.mobile-menu').toggleClass('mobile-menu-fix');
+        // Auto-Collapsing Mobile Menu When Left Open
+        var a = $('.menu-link').attr('class');
+        if (direction == 'up' && a == 'menu-link active') {
+          $('.menu-link').trigger('click');
+        }
+      },
+      // make header turn white just before it reaches about me section
+      offset: $('.menu-container').innerHeight() + 25
+    });
+  } else {
+    // Changing Menu background after leaving Header Section
+    $('.menu-container').addClass('menu-normal');
+    $('.menu-item').addClass('menu-item-transparent');
+    $('.desktop-menu .hvr-underline-from-left').addClass('dark');
+    // Toggle Logo
+    toggleLogoImg('desktop-logo');
+    // Toggling Mobile Menu Visibility
+    $('.mobile-menu').addClass('mobile-menu-fix');
+  }
 
   // Toggle Mobile Menu
   $('.mobile-menu a').on('click', function () {
