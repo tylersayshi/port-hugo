@@ -943,12 +943,28 @@ ul.experience-chart {
 }
 .posts {
   min-height: calc(100vh - 340px);
-  .post a {
-    color: #212121;
+  a:hover {
     text-decoration: none;
-    &:hover {
-      color: rgba(50, 50, 50, 0.6);
-    }
+  }
+}
+.post.card {
+  color: #212121;
+  padding: 0;
+  margin-bottom: 16px;
+  .content {
+    padding: 10px;
+  }
+  img {
+    margin-right: 10px;
+    max-width: 150px;
+    height: max-content;
+    align-self: center;
+  }
+  &:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+  &:focus {
+    outline: auto;
   }
 }
 .post-container {

@@ -4,13 +4,18 @@
     <h1>{{ .Title }}</h1>
     <div class="posts mt-4">
       {{ range .Pages }}
-        <div class="post col-lg-8 col-md-10 col-12 mx-auto text-left">
-          <a href="{{ .Permalink }}"
-            ><h2>{{ .Title }}</h2>
-            <span>{{ .Date.Format "1/2/2006" }}</span>
-            <p>{{ .Description }}</p></a
+        <a href="{{ .Permalink }}">
+          <div
+            class="post col-lg-8 col-md-10 col-12 mx-auto text-left card d-flex flex-row"
           >
-        </div>
+            <img src="{{ .Params.image }}" alt="{{ .Title }}" />
+            <div class="content">
+              <h2>{{ .Title }}</h2>
+              <span>{{ .Date.Format "1/2/2006" }}</span>
+              <p>{{ .Description }}</p>
+            </div>
+          </div>
+        </a>
       {{ end }}
     </div>
   </div>
