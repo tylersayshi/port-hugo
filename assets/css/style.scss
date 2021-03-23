@@ -93,6 +93,13 @@ body {
   font-family: 'Rubik', sans-serif;
   height: 100%;
 }
+pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  border-radius: 6px;
+}
 .no-js {
   body {
     overflow: visible;
