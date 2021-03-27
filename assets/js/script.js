@@ -200,7 +200,7 @@
   }
 
   // Toggle Mobile Menu
-  $('.mobile-menu a').on('click', function () {
+  $('.mobile-menu a.menu-link').on('click', function () {
     $('.menu-link').toggleClass('active');
     $('.menu-slider').slideToggle(500);
   });
