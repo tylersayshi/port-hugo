@@ -58,6 +58,8 @@ copyright = "Copyright Burton Guster &copy;"
 description = "Personal Portfolio"
 author = "Burton Guster"
 favicon = "images/favicon.png"
+google_analytics = "G-ABCDEFG123"
+
 
 # Preloader
 [params.preloader]
