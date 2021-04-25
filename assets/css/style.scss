@@ -93,6 +93,9 @@ body {
   font-family: 'Rubik', sans-serif;
   height: 100%;
 }
+a {
+  color: #00e;
+}
 pre {
   padding: 16px;
   overflow: auto;
@@ -825,15 +828,9 @@ label {
 .experience-skill {
   margin-top: 40px;
 }
-.experience {
-  h3 {
-    color: #6f6f6f;
-    font-weight: 700;
-    letter-spacing: 2px;
-  }
-}
+.experience,
 .skill {
-  h3 {
+  h2 {
     color: #6f6f6f;
     font-weight: 700;
     letter-spacing: 2px;
@@ -881,7 +878,7 @@ ul.experience-chart {
       }
     }
   }
-  h4 {
+  h3 {
     font-size: 19px;
     margin-top: 0;
     margin-bottom: 4px;
@@ -937,7 +934,7 @@ ul.experience-chart {
 .portfolio,
 .blog {
   background: #fff;
-  h1 {
+  h2 {
     color: #6f6f6f;
     text-align: center;
     font-weight: 700;

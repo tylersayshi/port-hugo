@@ -22,6 +22,7 @@
                     <a
                       href="{{ .link | absURL }}"
                       target="_blank"
+                      rel="noreferrer"
                       class="button download-cv"
                     >
                       {{ .label }} <i class="fa fa-download"></i
@@ -43,12 +44,12 @@
         {{ if .Site.Data.content.experience.enable }}
           {{ with .Site.Data.content.experience }}
             <div class="col-lg-6 col-sm-6 col-11 experience">
-              <h3>{{ .title }}</h3>
+              <h2>{{ .title }}</h2>
               <ul class="experience-chart">
                 {{ range .experience_list }}
                   <li>
                     <div class="single-experience">
-                      <h4>{{ .name | markdownify }}</h4>
+                      <h3>{{ .name | markdownify }}</h3>
                       {{ with .company }}
                         <span>{{ . | markdownify }} |</span>
                       {{ end }}
@@ -67,7 +68,7 @@
         {{ if .Site.Data.content.skill.enable }}
           {{ with .Site.Data.content.skill }}
             <div class="col-lg-6 col-sm-6 col-11 skill">
-              <h3>{{ .title }}</h3>
+              <h2>{{ .title }}</h2>
               <div class="skill-progress-bar">
                 {{ range .skill_list }}
                   <div class="clearfix">
@@ -118,9 +119,9 @@
         <div class="container-fluid text-center">
           <div class="row portfolio-holder text-left">
             <div class="col-12 text-center">
-              <h1>
+              <h2>
                 {{ .title }}
-              </h1>
+              </h2>
             </div>
             <ul id="og-grid" class="og-grid">
               {{ range .portfolio_list }}

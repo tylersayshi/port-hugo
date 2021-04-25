@@ -259,7 +259,7 @@ var Grid = (function () {
       this.$title = $('<h3></h3>');
       this.$description = $('<p></p>');
       this.$href = $(
-        '<a href="#" class="button" target="_blank">{{ .Site.Params.buttontext }}</a>'
+        '<a href="#" class="button" target="_blank" rel="noreferrer">{{ .Site.Params.buttontext }}</a>'
       );
       this.$details = $('<div class="og-details"></div>').append(
         this.$title,
