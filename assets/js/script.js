@@ -212,7 +212,7 @@
 			Start About Me
 	----------------------------------*/
   // Initializing Skillbar Animation
-  $('.skill h3').waypoint({
+  $('.skill h2').waypoint({
     handler: function (direction) {
       if (direction == 'up') {
         $('.skillbar').each(function () {
