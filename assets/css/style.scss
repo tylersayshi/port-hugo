@@ -963,6 +963,11 @@ ul.experience-chart {
   color: #212121;
   padding: 0;
   margin-bottom: 16px;
+  display: flex;
+  flex-direction: row;
+  h2 {
+    text-align: left;
+  }
   .content {
     padding: 10px;
   }
@@ -974,6 +979,13 @@ ul.experience-chart {
   }
   &:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+  @media (max-width: 727px) {
+    flex-direction: column;
+    img {
+      max-width: 100%;
+      margin: 0;
+    }
   }
   &:focus {
     outline: auto;
