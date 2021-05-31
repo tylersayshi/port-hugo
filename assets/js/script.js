@@ -46,9 +46,7 @@
   // -----------------------------
   //  On Scroll
   // -----------------------------
-  $(window).on('scroll', function () {
-    counter();
-  });
+  $(window).on('scroll', counter);
 
   /*--------------------------------
 	 Start Smooth Scrolling
@@ -136,27 +134,19 @@
 	Start Menu
 	----------------------------------*/
 
-  if (window.location.pathname.includes('/blog/')) {
-    const blogMenuItem = jQuery.grep(
-      $('.menu-item'),
-      (ele, i) => ele.textContent.trim().toLowerCase() === 'blog'
-    );
-    if (blogMenuItem.length) blogMenuItem[0].classList.add('active');
-  } else {
-    // Highlighting Menu on Scroll Through Sections
-    $(window).on('scroll', function () {
-      var counter = 0;
-      $('section').each(function () {
-        if ($(window).scrollTop() + 80 >= $(this).offset().top) {
-          $('.menu-item').removeClass('active');
-          $('.menu-item.' + counter).addClass('active');
-          $('.mobile-menu-item').removeClass('active');
-          $('.mobile-menu-item.' + counter).addClass('active');
-        }
-        ++counter;
-      });
-    });
-  }
+  $('.menu-item').each(function () {
+    const link = $(this).find('a').attr('href');
+    const linkNoAnchor = link.includes('#') ? link.split('#')[0] : link;
+    const path = window.location.pathname;
+    const locationNoTrailing =
+      path.endsWith('/') && path.length > 1
+        ? path.substr(0, path.length - 1)
+        : path;
+    console.log(locationNoTrailing, linkNoAnchor);
+    if (locationNoTrailing === linkNoAnchor) {
+      this.classList.add('active');
+    }
+  });
 
   function toggleLogoImg(id) {
     var img = document.getElementById(id).src;
@@ -256,7 +246,6 @@
 			Start Code for Mobile Devices
 	----------------------------------*/
   // Code for Opera Mini
-  var vh = $(window).height();
   if (navigator.userAgent.indexOf('Opera Mini') != -1) {
     // Setting Fun Facts Value Immediately
     work.start();
