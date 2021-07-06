@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start": "hugo server",
-    "build": "node ./scripts/clone.js",
+    "build": "hugo-theme-demo-builder",
     "prettier": "prettier --write ."
   },
   "devDependencies": {
@@ -17,8 +17,6 @@
     "prettier-plugin-go-template": "^0.0.10"
   },
   "dependencies": {
-    "concat-stream": "^2.0.0",
-    "shelljs": "^0.8.4",
-    "toml": "^3.0.0"
+    "hugo-theme-demo-builder": "^1.0.1"
   }
 }
