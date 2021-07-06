@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start": "hugo server",
-    "build": "hugo",
+    "build": "./build.sh",
     "prettier": "prettier --write ."
   },
   "devDependencies": {
