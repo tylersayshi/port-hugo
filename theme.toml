@@ -6,6 +6,7 @@ homepage = "https://github.com/tylerjlawson/port-hugo"
 tags = ['personal', 'simple', 'bootstrap', 'font-awesome', 'portfolio']
 features = ['bootstrap','responsive','scss','autoprefixer']
 min_version = "0.60.0"
+demosite = "https://compassionate-kepler-de5af1.netlify.app/"
 
 [author]
   name = "tylerjlawson"
