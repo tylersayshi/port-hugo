@@ -19,5 +19,6 @@ fs.createReadStream('../theme.toml', 'utf8').pipe(
     } catch (e) {
       console.log('An error occurred when trying to clone:', e);
     }
+    shell.exec('hugo');
   })
 );
