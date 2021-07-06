@@ -1,10 +1,7 @@
-{{ "<!-- JS Plugins -->" | safeHTML }}
-{{ range .Site.Params.plugins.js }}
-  <script src="{{ .link | absURL }}"></script>
-{{ end }}
-
-{{ "<!-- Main Scripts -->" | safeHTML }}
-{{ $script := resources.Get "js/script.js" | minify }}
+{{ "<!-- JS Plugins -->" | safeHTML }} {{ range .Site.Params.plugins.js }}
+<script src="{{ .link | relURL }}"></script>
+{{ end }} {{ "<!-- Main Scripts -->" | safeHTML }} {{ $script := resources.Get
+"js/script.js" | minify }}
 <script src="{{ $script.Permalink }}"></script>
 {{ $script := resources.Get "js/hugrid.custom.js" | minify }}
 <script src="{{ $script.Permalink }}"></script>
