@@ -20,7 +20,7 @@
   {{ "<!-- Main Stylesheet -->" | safeHTML }}
 
   {{ $styles := resources.Get "css/style.scss" | resources.ToCSS | resources.PostCSS | minify }}
-  <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen" />
+  <link rel="stylesheet" href="{{ $styles.RelPermalink }}" media="screen" />
 
   {{ "<!--Favicon-->" | safeHTML }}
 

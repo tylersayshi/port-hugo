@@ -121,12 +121,12 @@
           </p>
           <a
             href="{{ .url }}"
-            data-largesrc="{{ $big_image.Permalink }}"
+            data-largesrc="{{ $big_image.RelPermalink }}"
             data-title="{{ .name }}"
             data-buttontext="SEE SITE"
           >
             <img
-              src="{{ $sm_image.Permalink }}"
+              src="{{ $sm_image.RelPermalink }}"
               alt="{{ $parsed_name }} image"
             />
           </a>

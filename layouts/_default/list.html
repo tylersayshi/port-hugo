@@ -4,7 +4,7 @@
     <h1>{{ .Title }}</h1>
     <div class="posts mt-4">
       {{ range .Pages }}
-        <a href="{{ .Permalink }}">
+        <a href="{{ .RelPermalink }}">
           <div class="post col-lg-8 col-md-10 col-12 mx-auto text-left card">
             <img src="{{ .Params.image }}" alt="{{ .Title }}" />
             <div class="content">

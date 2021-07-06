@@ -2,6 +2,6 @@
 <script src="{{ .link | relURL }}"></script>
 {{ end }} {{ "<!-- Main Scripts -->" | safeHTML }} {{ $script := resources.Get
 "js/script.js" | minify }}
-<script src="{{ $script.Permalink }}"></script>
+<script src="{{ $script.RelPermalink }}"></script>
 {{ $script := resources.Get "js/hugrid.custom.js" | minify }}
-<script src="{{ $script.Permalink }}"></script>
+<script src="{{ $script.RelPermalink }}"></script>
