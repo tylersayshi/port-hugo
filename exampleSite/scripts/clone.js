@@ -3,6 +3,16 @@ var concat = require('concat-stream');
 var fs = require('fs');
 const shell = require('shelljs');
 
+try {
+  if (!fs.existsSync('exampleSite/netlify.toml')) {
+    console.warn(
+      'Missing netlify.toml in exampleSite directory\nFor more info: https://gohugo.io/hosting-and-deployment/hosting-on-netlify/'
+    );
+  }
+} catch (e) {
+  console.log('An error occurred when trying to read netlify.toml:', e);
+}
+
 fs.createReadStream('../theme.toml', 'utf8').pipe(
   concat(function (data) {
     const parsed = toml.parse(data);
