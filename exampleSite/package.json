@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start": "hugo server",
-    "build": "hugo-theme-demo-builder",
+    "build": "yarn run hugo-theme-demo-builder",
     "prettier": "prettier --write ."
   },
   "devDependencies": {
