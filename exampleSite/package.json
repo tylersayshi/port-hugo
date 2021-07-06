@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start": "hugo server",
-    "build": " bash -x ./build.sh",
+    "build": "./scripts/build.sh",
     "prettier": "prettier --write ."
   },
   "devDependencies": {
@@ -15,5 +15,10 @@
     "postcss-cli": "^8.3.1",
     "prettier": "^2.2.1",
     "prettier-plugin-go-template": "^0.0.10"
+  },
+  "dependencies": {
+    "concat-stream": "^2.0.0",
+    "shelljs": "^0.8.4",
+    "toml": "^3.0.0"
   }
 }
