@@ -10,13 +10,13 @@
     "prettier": "prettier --write ."
   },
   "devDependencies": {
-    "autoprefixer": "^10.2.3",
-    "postcss": "^8.2.4",
+    "autoprefixer": "^10.2.6",
+    "postcss": "^8.3.5",
     "postcss-cli": "^8.3.1",
-    "prettier": "^2.2.1",
-    "prettier-plugin-go-template": "^0.0.10"
+    "prettier": "^2.3.2",
+    "prettier-plugin-go-template": "^0.0.11"
   },
   "dependencies": {
-    "hugo-theme-demo-builder": "^1.0.1"
+    "hugo-theme-demo-builder": "^1.0.3"
   }
 }
