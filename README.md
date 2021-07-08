@@ -6,10 +6,6 @@ This theme is a simple, customizable portfolio for designers or web developers.
 
 ![Screenshot](https://raw.githubusercontent.com/tylerjlawson/port-hugo/master/images/screenshot.png)
 
-## Live Demo
-
-[Click here to see demo page](https://tyler-lawson.com/port-hugo)
-
 ## Features
 
 - Responsive portfolio
