@@ -142,7 +142,6 @@
       path.endsWith('/') && path.length > 1
         ? path.substr(0, path.length - 1)
         : path;
-    console.log(locationNoTrailing, linkNoAnchor);
     if (locationNoTrailing === linkNoAnchor) {
       this.classList.add('active');
     }
