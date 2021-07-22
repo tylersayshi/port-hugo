@@ -46,18 +46,20 @@
         <h2>{{ .title }}</h2>
         <ul class="experience-chart">
           {{ range .experience_list }}
-          <li>
-            <div class="single-experience">
-              <h3>{{ .name | markdownify }}</h3>
-              {{ with .company }}
-              <span>{{ . | markdownify }} |</span>
-              {{ end }} {{ with .duration }}
-              <span>{{ . | markdownify }}</span>
-              {{ end }} {{ with .content }}
-              <p>{{ . | markdownify }}</p>
-              {{ end }}
-            </div>
-          </li>
+          {{ if not (eq .enable false) }}
+            <li>
+              <div class="single-experience">
+                <h3>{{ .name | markdownify }}</h3>
+                {{ with .company }}
+                <span>{{ . | markdownify }} |</span>
+                {{ end }} {{ with .duration }}
+                <span>{{ . | markdownify }}</span>
+                {{ end }} {{ with .content }}
+                <p>{{ . | markdownify }}</p>
+                {{ end }}
+              </div>
+            </li>
+          {{ end }}
           {{ end }}
         </ul>
       </div>
