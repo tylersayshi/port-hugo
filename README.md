@@ -13,8 +13,8 @@ This theme is a simple, customizable portfolio for designers or web developers.
 - Hugo image processing for optimization
 - PostCSS for autoprefixing
 - SCSS for easy styling
-- [Hugrid](https://themes.gohugo.io/hugrid) based portfolio section
-- [Somrat](https://themes.gohugo.io/somrat) based design
+- [Hugrid](https://github.com/aerohub/hugrid) based portfolio section
+- [Somrat](https://github.com/somratpro/somrat) based design
 
 ## Install theme on your hugo site
 
