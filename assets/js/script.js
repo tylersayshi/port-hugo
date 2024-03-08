@@ -23,6 +23,9 @@
       $('.count').each(function () {
         var $this = $(this),
           countTo = $this.attr('data-count');
+	  if(!Number.isInteger(countTo)){
+            countTo = eval(countTo);
+          }
         $({
           countNum: $this.text()
         }).animate(
