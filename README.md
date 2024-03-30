@@ -33,6 +33,10 @@ theme = "port-hugo"
 
 Then you will need to replicate the data used in the `exampleSite/data/content.yaml` file to fill in the fields for your portfolio. Please also see the `exampleSite/config.toml` for guidance on setting up the more general site configurations.
 
+### Logo support
+
+Images named `logo.svg` and `logo-dark.svg` are meant to be used for the logos. They should be stored in `static/images` as seen in [./exampleSite/static/images](./exampleSite/static/images). If you wish to change this, the code to control the images is in `assets/js/script.js`.
+
 ## Credits
 
 I'd like to express gratitude to [somrat](https://github.com/somratpro/somrat) and [hugrid](https://github.com/aerohub/hugrid) for creating wonderful themes that I have used as a jumping off point. You may notice this theme is very similar in design to somrat, however it has distinct differences by using a manipulated version of hugrid for the portfolio section. I have also trimmed down the features of somrat, to only include what I wanted for a simple theme.

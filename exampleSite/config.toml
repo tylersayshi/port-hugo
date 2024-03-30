@@ -51,8 +51,6 @@ weight = 3
 
 #################### default parameters ################################
 [params]
-logo_light = "images/logo.svg"
-logo_dark = "images/logo-dark.svg"
 copyright = "Copyright Burton Guster &copy;"
 # Meta data
 description = "Personal Portfolio"
