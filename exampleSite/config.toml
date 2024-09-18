@@ -57,7 +57,8 @@ description = "Personal Portfolio"
 author = "Burton Guster"
 favicon = "images/favicon.png"
 google_analytics = "G-ABCDEFG123"
-
+logo_light = "images/logo.svg"
+logo_dark = "images/logo-dark.svg"
 
 # Preloader
 [params.preloader]
