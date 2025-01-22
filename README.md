@@ -2,9 +2,9 @@
 
 This theme is a simple, customizable portfolio for designers or web developers.
 
-![Thumbnail](https://raw.githubusercontent.com/tylerjlawson/port-hugo/master/images/tn.png)
+![Thumbnail](https://raw.githubusercontent.com/tylersayshi/port-hugo/master/images/tn.png)
 
-![Screenshot](https://raw.githubusercontent.com/tylerjlawson/port-hugo/master/images/screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/tylersayshi/port-hugo/master/images/screenshot.png)
 
 ## Features
 
@@ -22,7 +22,7 @@ This theme is a simple, customizable portfolio for designers or web developers.
 hugo new site your-site-name # if you already have a site ignore this line and the next
 cd your-site-name
 cd themes
-git clone https://github.com/tylerjlawson/port-hugo.git
+git clone https://github.com/tylersayshi/port-hugo.git
 ```
 
 Once you have done this, you may use the `exampleSite` folder as an example for how to set your project up. The two main things to pay attention to is to first set this in your `config.toml` file:

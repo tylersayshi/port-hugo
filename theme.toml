@@ -1,13 +1,13 @@
 name = "Port Hugo"
 license = "MIT"
-licenselink = "https://github.com/tylerjlawson/port-hugo/blob/master/LICENSE"
+licenselink = "https://github.com/tylersayshi/port-hugo/blob/master/LICENSE"
 description = "Web Developer Portfolio"
-homepage = "https://github.com/tylerjlawson/port-hugo"
+homepage = "https://github.com/tylersayshi/port-hugo"
 tags = ['personal', 'simple', 'bootstrap', 'font-awesome', 'portfolio']
 features = ['bootstrap','responsive','scss','autoprefixer']
 min_version = "0.60.0"
 demosite = "https://compassionate-kepler-de5af1.netlify.app/"
 
 [author]
-  name = "tylerjlawson"
+  name = "tylersayshi"
   homepage = "https://tyler-lawson.com/"
