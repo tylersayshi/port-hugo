@@ -1,5 +1,7 @@
 # Port-Hugo (A simple portfolio)
 
+currently tested with hugo v0.141.0
+
 This theme is a simple, customizable portfolio for designers or web developers.
 
 ![Thumbnail](https://raw.githubusercontent.com/tylersayshi/port-hugo/master/images/tn.png)
