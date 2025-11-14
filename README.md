@@ -13,8 +13,6 @@ This theme is a simple, customizable portfolio for designers or web developers.
 - Responsive portfolio
 - Easy sections to use
 - Hugo image processing for optimization
-- PostCSS for autoprefixing
-- SCSS for easy styling
 - [Hugrid](https://github.com/aerohub/hugrid) based portfolio section
 - [Somrat](https://github.com/somratpro/somrat) based design
 
