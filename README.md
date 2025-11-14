@@ -25,8 +25,8 @@ hugo new site your-site-name # if you already have a site ignore this line and t
 cd your-site-name
 cd themes
 git clone https://github.com/tylersayshi/port-hugo.git
-cd port-hugo
-pnpm install # or yarn, npm, bun, etc.
+cd ..
+hugo serve
 ```
 
 Once you have done this, you may use the `exampleSite` folder as an example for how to set your project up. The two main things to pay attention to is to first set this in your `config.toml` file:
